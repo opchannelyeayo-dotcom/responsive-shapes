@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>形狀實驗室｜響應式網頁作業</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f6f5f2; color: #242433; font-family: system-ui, sans-serif; }
+    main { max-width: 1000px; margin: auto; padding: 40px 20px; }
+    .eyebrow { color: #626271; font-size: 12px; letter-spacing: 3px; }
+    h1 { font-size: clamp(30px, 5vw, 48px); margin: 16px 0; }
+    .intro { color: #626271; line-height: 1.8; }
+    .stage { display: grid; place-items: center; min-height: 380px; margin: 28px 0; background: white; border: 1px solid #e4e2dd; border-radius: 20px; }
+    .shape { width: 300px; height: 300px; background: #2563eb; display: grid; place-items: center; color: white; text-align: center; }
+    .shape strong { display: block; font-size: 28px; margin-bottom: 8px; }
+    .tablet, .desktop { display: none; }
+    .rules { display: flex; flex-wrap: wrap; gap: 12px; }
+    .rule { flex: 1 1 200px; padding: 18px; border: 1px solid #e4e2dd; border-radius: 12px; line-height: 1.8; }
+    .rule span { display: block; color: #626271; font-size: 14px; }
+    footer { margin-top: 24px; color: #626271; font-size: 13px; }
+    @media (min-width: 600px) {
+      .shape { width: 360px; height: 220px; border-radius: 32px; background: #c65312; }
+      .mobile { display: none; }
+      .tablet { display: block; }
+    }
+    @media (min-width: 900px) {
+      .shape { width: 300px; height: 300px; border-radius: 50%; background: #7c3aed; }
+      .tablet { display: none; }
+      .desktop { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">RESPONSIVE / SHAPE LAB</p>
+    <h1>同一個方格，三種樣貌。</h1>
+    <p class="intro">從 300 × 300 方格出發，透過兩個 CSS breakpoint 改變形狀與顏色。<br>調整瀏覽器寬度，觀察下方圖形的變化。</p>
+    <section class="stage" aria-label="響應式圖形展示">
+      <div class="shape">
+        <div class="mobile"><strong>方形</strong>300 × 300 px<br>藍色 · 寬度 &lt; 600px</div>
+        <div class="tablet"><strong>圓角矩形</strong>360 × 220 px<br>橘色 · 600–899px</div>
+        <div class="desktop"><strong>圓形</strong>300 × 300 px<br>紫色 · 寬度 ≥ 900px</div>
+      </div>
+    </section>
+    <div class="rules">
+      <div class="rule"><b>01 / 小螢幕</b><span>&lt; 600px · 藍色方形</span></div>
+      <div class="rule"><b>02 / 中螢幕</b><span>≥ 600px · 橘色圓角矩形</span></div>
+      <div class="rule"><b>03 / 大螢幕</b><span>≥ 900px · 紫色圓形</span></div>
+    </div>
+    <footer>行動網頁設計作業 · HTML + CSS Media Queries</footer>
+  </main>
+</body>
+</html>
